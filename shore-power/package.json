@@ -1,0 +1,13 @@
+{
+  "name": "shore-power-billing",
+  "version": "1.0.0",
+  "description": "港口岸电使用核算系统 —— 记录船舶接电时长与用电量，按航次出具对账明细",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sql.js": "^1.10.3"
+  }
+}
