@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>岸电对账单 APS-2026-0001</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; color: #1a1a1a;
+       background: #f0f2f5; margin: 0; padding: 24px; }
+.sheet { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px 48px;
+         box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+h1 { text-align: center; font-size: 24px; letter-spacing: 6px; margin: 0 0 4px; }
+.sub { text-align: center; color: #888; font-size: 12px; margin-bottom: 20px; }
+.meta { display: flex; justify-content: space-between; align-items: center;
+        border-top: 3px double #333; border-bottom: 1px solid #333;
+        padding: 8px 2px; margin-bottom: 16px; font-size: 14px; }
+.badge { display: inline-block; padding: 2px 12px; border-radius: 12px;
+         font-size: 13px; color: #fff; }
+.badge.draft { background: #8c8c8c; } .badge.issued { background: #fa8c16; }
+.badge.ship_confirmed { background: #1677ff; } .badge.disputed { background: #f5222d; }
+.badge.closed { background: #52c41a; } .badge.cancelled { background: #bfbfbf; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.info td { padding: 5px 8px; } .info td.k { color: #666; width: 90px; }
+.items { margin-top: 14px; }
+.items th, .items td { border: 1px solid #999; padding: 7px 8px; text-align: center; }
+.items th { background: #f5f5f5; }
+.items td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.totals { margin-top: 14px; background: #fafafa; border: 1px solid #999; }
+.totals td { padding: 8px 12px; font-size: 14px; }
+.totals .grand { font-size: 17px; font-weight: 700; color: #c41d7f; }
+.confirm { margin-top: 18px; font-size: 14px; line-height: 1.9; }
+.dispute { color: #f5222d; }
+.sign { display: flex; justify-content: space-between; margin-top: 36px; font-size: 14px; }
+.sign .box { width: 45%; border-top: 1px solid #333; padding-top: 6px; color: #555; }
+.foot { margin-top: 28px; text-align: center; color: #aaa; font-size: 12px; }
+@media print { body { background: #fff; padding: 0; } .sheet { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1>港口岸电使用对账单</h1>
+  <div class="sub">SHORE POWER RECONCILIATION STATEMENT</div>
+  <div class="meta">
+    <span>单号：<b>APS-2026-0001</b>（V1）</span>
+    <span class="badge closed">双方确认完成</span>
+  </div>
+  <table class="info">
+    <tr><td class="k">港口</td><td>滨海港国际集装箱码头</td>
+        <td class="k">泊位</td><td>3号泊位</td></tr>
+    <tr><td class="k">船名</td><td>远洋之星</td>
+        <td class="k">IMO</td><td>9876543</td></tr>
+    <tr><td class="k">船公司</td><td>蓝海航运有限公司</td>
+        <td class="k">航次</td><td>VY2026-0918</td></tr>
+    <tr><td class="k">到泊时间</td><td>2026-09-18 14:00:00</td>
+        <td class="k">离泊时间</td><td>-</td></tr>
+  </table>
+  <table class="items">
+    <thead><tr>
+      <th>序号</th><th>电表号</th><th>接电时间</th><th>断电时间</th><th>接电时长</th>
+      <th>起码</th><th>止码</th><th>用电量(kWh)</th>
+      <th>电费单价<br>(元/kWh)</th><th>服务费单价<br>(元/kWh)</th><th>小计(元)</th>
+    </tr></thead>
+    <tbody><tr><td>1</td><td>M-3A-01</td><td>2026-09-18 15:10</td><td>2026-09-18 23:40</td><td>8小时30分</td><td class='num'>10,234.50</td><td class='num'>10,512.80</td><td class='num'>278.30</td><td class='num'>0.8500</td><td class='num'>0.2000</td><td class='num'>292.22</td></tr><tr><td>2</td><td>M-3A-01</td><td>2026-09-19 06:20</td><td>2026-09-19 12:05</td><td>5小时45分</td><td class='num'>10,512.80</td><td class='num'>10,711.40</td><td class='num'>198.60</td><td class='num'>0.8500</td><td class='num'>0.2000</td><td class='num'>208.53</td></tr></tbody>
+  </table>
+  <table class="totals">
+    <tr>
+      <td>合计接电时长：<b>14小时15分</b></td>
+      <td>合计用电量：<b>476.90 kWh</b></td>
+      <td>电费：405.37 元</td>
+      <td>服务费：95.38 元</td>
+      <td class="grand">应付合计：500.75 元</td>
+    </tr>
+  </table>
+  <div class="confirm">
+    <div>出具时间：2026-09-20 10:30:09</div>
+    <div>船方确认：王船长　2026-09-20 10:30:09</div>
+    <div>港方确认：李调度　2026-09-20 10:30:09</div>
+    
+  </div>
+  <div class="sign">
+    <div class="box">船方签字 / 日期</div>
+    <div class="box">港方签字 / 日期</div>
+  </div>
+  <div class="foot">本单由港口岸电使用核算系统生成 · 2026-09-20 10:30:09</div>
+</div>
+</body>
+</html>
